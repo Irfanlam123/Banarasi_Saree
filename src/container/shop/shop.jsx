@@ -6,6 +6,11 @@ import "slick-carousel/slick/slick-theme.css";
 import Saree1 from "../shop/saree.jpg";
 import { Link } from "react-router-dom";
 import Card from "../home/component/card";
+import { Carousel } from "./components/carousel";
+import {slides} from './components/carouselData.json'
+
+
+
 
 const Shop = () => {
   const settings = {
@@ -19,7 +24,7 @@ const Shop = () => {
 
   return (
     <div>
-      <div className="mt-3">
+      <div className="  mt-3">
         <Slider {...settings}>
           <div>
             <img className="h-[600px] w-full" src={Saree1} alt="img" />
@@ -32,8 +37,14 @@ const Shop = () => {
           </div>
         </Slider>
       </div>
-    
-      <Card/>
+      <div className="flex justify-between ">
+        <Carousel data={slides} />
+        <Carousel data={slides} />
+        <Carousel data={slides} />
+        
+
+      </div>
+   
     </div>
   );
 };
